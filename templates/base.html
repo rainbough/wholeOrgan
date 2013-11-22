@@ -1,4 +1,5 @@
 <template name="base">
+<div id="wrap">
 
 <!-- header -->
 <div class="header">
@@ -7,36 +8,48 @@
 		<div class="row">
 
 			<!-- wholeorgan.org logo -->
-			<div class="col-md-3">
-				<div class="logo"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3">
+				<a href="/"><div class="logo" alt="wholeorgan.org"></div></a>
 			</div>
 
 
 			<!-- main site navigation -->
-			<div class="cold-md-21">
+			<div class="col-sm-8 col-md-9">
 				<ul class="nav">
 					<li>
 						<a href="#">
-						<h1>Summit</h1>
+						<span class="head">Summit</span>
 						<span class="subhead">Who, when, and where</span>
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-						<h1>Organizers</h1>
+						<span class="head">Organizers</span>
 						<span class="subhead">Fostering collaborations</span>
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-						<h1>Contact</h1>
+						<span class="head">Contact</span>
 						<span class="subhead">Questions or comments</span>
 						</a>
 					</li>
 				</ul>
 			</div>
+
+			<!-- mobile site navigation -->
+			<div class="col-xs-12">
+				<ul class="nav_mob">
+					<li class="standout">Navigate:</li>
+					<li><a href="#">Summit</a></li>
+					<li><a href="#">Organizers</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"></div>
 
 		</div>
 
@@ -52,9 +65,55 @@
 
 
 
+
+
+</div>
+
 <!-- footer -->
 <div class="footer">
-	<h3>... and the footer content here.</h3>
+	<div class="secondary_nav">
+		<div class="container">
+			<ul class="snav">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">The Summit</a></li>
+				<li><a href="#">Organizers</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr class="spacer40">
+
+		<div class="row">
+			<div class="col-md-4 col-sm-4">
+				<h2>About wholeorgan.org</h2>
+				<p>An international State-of-the-Science Summit on Whole Liver Replacement organized to foster and facilitate transdisciplinary scientific collaboration. <a href="#">Learn More.</a></p>
+			</div>
+
+			<div class="col-md-4 col-sm-4">
+				<h2>Sign up for updates</h2>
+				<p>Sign up form will go here in the future. Hooray.</p>
+				
+			</div>
+
+			<div class="col-md-4 col-sm-4">
+				<h2>Connect with us</h2>
+				<p>for updates and developments.</p>
+				<a href="#">
+					<img src="/images/twitter.png" alt="" class="social">
+				</a>
+				<a href="#">
+					<img src="/images/youtube.png" style="margin-top: 1px; margin-left: 4px" alt="" class="social">
+				</a>
+				<a href="#">
+					<img src="/images/facebook.png" alt="" style="margin-bottom: 2px" class="social">
+				</a>
+			</div>
+		</div>
+
+		<hr class="spacer20">
+	</div>
 </div>
 
 </template>
