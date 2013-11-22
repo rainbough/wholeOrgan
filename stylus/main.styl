@@ -1,7 +1,122 @@
-body, *
+
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700,300|Pontano+Sans');
+
+
+
+// declare some fonts
+pontano = 'Pontano Sans', sans-serif;
+roboto = 'Roboto', sans-serif;
+
+// declare some colors 
+blue = #41a1e2
+red = #d54747
+orange = #f05c39
+
+// declare some font weights
+normal = 400
+light = 300
+heavy = 600
+
+
+
+/* ======================== true style begins y0 ======================== */
+body, html
+	margin 0px
+	padding 0px
+
+
+// default headers
+h1, h2, h3, h4, h5, h6
+	font pontano
+	color #333
 	margin 0
 	padding 0
+	font-weight 400
 
+
+// default paragraph
+p
+	font-size 14px
+	font-family roboto
+	font-weight normal
+
+
+
+
+// HEADER STYLES
 .header
+	margin 0px
 	background url(/images/nav_bg.png)
 	height 84px
+
+	.main
+		padding-top 30px
+
+	.logo
+		height 105px
+		background url(/images/wo_logo.png) no-repeat 
+		background-size 83%
+
+	
+	// main nav
+	ul.nav
+		float right
+
+		// strip bootstrap styles
+		a
+			padding 0
+			margin 0
+			background none
+
+
+		// list items are blocks with headers and subheads
+		li
+			display inline-block
+			float left
+			margin-left 50px
+
+			h1
+				font-size 15px
+				font-family roboto
+				color #555
+
+			span.subhead
+				font-size 12px
+				color #aaa
+
+		li:hover
+			h1
+				color #333
+
+			span.subhead
+				color #d54747
+
+// SPACER STYLES
+
+hr
+	clear both
+	border-style none
+	height 1px
+	margin 0
+	display block
+
+spacer(n)
+	height n
+
+hr.spacer10
+	spacer(10)
+
+hr.spacer20
+	spacer(20)
+
+hr.spacer30
+	spacer(30)
+
+hr.spacer40
+	spacer(40)
+
+hr.spacer50
+	spacer(50)
+
+hr.spacer60
+	spacer(60)

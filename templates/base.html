@@ -1,13 +1,60 @@
 <template name="base">
 
+<!-- header -->
 <div class="header">
-	<h1>The header content would go up here...</h1>
+	<div class="main container">
+
+		<div class="row">
+
+			<!-- wholeorgan.org logo -->
+			<div class="col-md-3">
+				<div class="logo"></div>
+			</div>
+
+
+			<!-- main site navigation -->
+			<div class="cold-md-21">
+				<ul class="nav">
+					<li>
+						<a href="#">
+						<h1>Summit</h1>
+						<span class="subhead">Who, when, and where</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+						<h1>Organizers</h1>
+						<span class="subhead">Fostering collaborations</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+						<h1>Contact</h1>
+						<span class="subhead">Questions or comments</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
 </div>
 
-	<!-- the yield handlebars tag is where the content template is rendered to -->
+
+
+	
+	<!-- the yield handlebars tag is where the content template is rendered to. also don't wrap this in a container, do it within the content template itself. thx. -->
 	{{yield}}
 
-	<br>
-	<h3>... and the footer content here.</h3
+
+
+
+<!-- footer -->
+<div class="footer">
+	<h3>... and the footer content here.</h3>
+</div>
 
 </template>
