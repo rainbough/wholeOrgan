@@ -11,6 +11,7 @@ roboto = 'Roboto', sans-serif;
 blue = #41a1e2
 red = #d54747
 orange = #f05c39
+green = #8cca38
 
 // declare some font weights
 normal = 400
@@ -64,6 +65,9 @@ h2
 	border-bottom 2px solid orange
 	display inline-block
 
+	&.blue
+		border-bottom 2px solid blue
+
 
 
 // default paragraph
@@ -95,6 +99,8 @@ background-gen(color)
 a.button
 	padding 16px 45px
 	background-color #333 // default color
+	font-weight light
+	letter-spacing 1px
 
 	font-family roboto
 	color #fff
@@ -105,6 +111,10 @@ a.button
 	&:hover
 		background-color lighten(#333, 20%)
 
+	&:active
+		position relative
+		top 1px
+
 	&.long
 		padding 14px 65px
 
@@ -113,6 +123,9 @@ a.button
 
 	&.orange
 		background-gen(orange)
+
+	&.green
+		background-gen(green)
 
 
 // ============================ HEADER STYLES
@@ -364,6 +377,9 @@ a.button
 		@media (min-width: 1000px)
 			background-size 690px
 
+	&.bubblestwo
+		background-position center bottom
+
 
 
 .grayback
@@ -405,6 +421,7 @@ spacer(n)
 
 	&.mobonly
 		display none
+		
 		@media (max-width: 768px)
 			display block
 
