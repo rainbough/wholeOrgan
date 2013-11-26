@@ -2,8 +2,9 @@
   "packages": {
     "iron-router": {},
     "bootstrap-3": {},
-	"meteor-mongo-extensions": {
-		"git": "https://github.com/jhoxray/meteor-mongo-extensions.git"
-	}
+    "meteor-mongo-extensions": {
+      "git": "https://github.com/jhoxray/meteor-mongo-extensions.git"
+    },
+    "meteor-gmaps": {}
   }
 }
