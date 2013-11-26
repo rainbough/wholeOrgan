@@ -78,6 +78,12 @@ p
 	line-height 1.6
 	color #333
 
+	&.bigger
+		color #666
+		font-size 17px
+		font-family roboto
+		font-weight normal
+
 
 // default links
 a
@@ -115,8 +121,17 @@ a.button
 		position relative
 		top 1px
 
+	&.small
+		padding 10px 40px
+
 	&.long
 		padding 14px 65px
+
+	&.fluid
+		display inline-block
+		padding 10px
+		width 100%
+		max-width 300px
 
 	&.blue
 		background-gen(blue)
@@ -284,6 +299,27 @@ a.button
 		color #888
 
 
+// ============================ SUMMIT-specific style
+form.summit_reg
+	label
+		color red
+		font-family pontano
+		font-size 15px
+		padding 15px 0
+
+	// default input
+	input
+		background-color #fafafa
+		border none
+		border-radius(3px)
+		font-family pontano
+		font-size 16px
+		box-shadow inset 0px 2px 1px #eaeaea
+		width 100%
+
+	input[type=text]
+		padding 15px 20px
+
 
 // ============================ FOOTER STYLES
 .footer
@@ -355,9 +391,19 @@ a.button
 		font-size 48px
 		font-weight light
 		font-family pontano
+		line-height 1.2
 
 		@media (max-width: 600px)
 			font-size 32px
+
+	span.subhead
+		display block
+		color #bbb
+		font-weight light
+		font-family pontano
+
+		font-size 26px
+		margin-top 10px
 
 	&.bubblesone
 		background url('/images/bubbles1.png') no-repeat
@@ -378,7 +424,19 @@ a.button
 			background-size 690px
 
 	&.bubblestwo
+		background url('/images/bubbles2.png') no-repeat
 		background-position center bottom
+		background-size 100%
+
+		@media (max-width: 500px)
+			span.mainhead
+				font-size 23px
+				
+				small
+					font-size 23px
+
+			span.subhead
+				font-size 20px
 
 
 
@@ -403,6 +461,32 @@ a.button
 	.center
 		text-align center
 
+.graybox
+	background-color #f7f7f7
+	width 100%
+	margin 0
+
+	span.head
+		font-family pontano
+		color #222
+		font-size 18px
+		font-weight heavy
+
+	p
+		color #777
+		font-size 16px
+		font-family roboto
+		font-weight normal
+
+// ============================ ALERT BOX STYLES
+.alertbox
+	padding 20px
+	border 1px solid #ffffff
+
+	&.orange
+		border 1px solid orange
+
+
 
 // ============================ SPACER STYLES
 hr
@@ -417,6 +501,10 @@ spacer(n)
 
 	&.nomob
 		@media (max-width: 768px)
+			display none
+
+	&.notab
+		@media (max-width: 992px)
 			display none
 
 	&.mobonly
