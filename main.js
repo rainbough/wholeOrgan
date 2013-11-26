@@ -3,6 +3,10 @@ Router.configure({
 	layoutTemplate: 'base'
 });
 
+Router.load(function(){
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
+});
+
 if (Meteor.isClient) {
 	Router.map(function(){
 		this.route('home',{
