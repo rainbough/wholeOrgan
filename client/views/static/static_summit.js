@@ -3,4 +3,6 @@
 // if you for whatever reason want to make a file ouytside of the static folder, please tell me first
 Template.static_summit.rendered = function() {
 	// code goes here (haha)
+
+	$(".help-block").popover();
 }
