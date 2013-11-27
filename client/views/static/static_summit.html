@@ -38,7 +38,7 @@
 				<hr class="spacer60">
 				<hr class="spacer10 nomob">
 				<div class="center">
-					<a href="#" class="long green button">Register Now</a>
+					<a href="#register_now" class="long green button">Register Now</a>
 				</div>
 				<hr class="spacer10 nomob">
 			</div>
@@ -98,13 +98,73 @@
 					<div class="center">
 						<h2 class="blue">Event Participants</h2>
 					</div>
+
+				</div>
+			</div>
+
+			<hr class="spacer60">
+			<!-- <hr class="spacer60"> -->
+
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<!-- left arrow -->
+					<div class="col-md-1 col-sm-1">
+						<hr class="spacer50">
+						<img src="/images/org_left.png" alt="">
+					</div>
+
+					<!-- five photos -->
+					<div class="col-md-2 col-sm-3 col-xs-2">
+						<img src="/images/jason_portrait.png" style="width: 100%;" alt="">
+					</div>
+ 
+					<div class="col-md-2 col-sm-3 col-xs-2">
+						<img src="/images/alex_portrait.png" style="width: 100%;" alt="">
+					</div>
+
+					<div class="col-md-2 col-sm-3 col-xs-2">
+						<img src="/images/jason_portrait.png" style="width: 100%;" alt="">
+					</div>
+
+					<div class="col-md-2 col-sm-3 nomob notab" style="display: inline-block;">
+						<img src="/images/alex_portrait.png" style="width: 100%;" alt="">
+					</div>
+
+					<div class="col-md-2 col-sm-3 nomob notab" style="display: inline-block;">
+						<img src="/images/jason_portrait.png" style="width: 100%;" alt="">
+					</div>
+
+					<!-- right arrow -->
+					<div class="col-md-1 col-sm-1">
+						<hr class="spacer50">
+						<img src="/images/org_rght.png" style="float: right;" alt="">
+					</div>
+				</div>
+
+				<hr class="spacer60">
+				<hr class="spacer10">
+
+				<div class="col-md-8 col-md-offset-2">
+					<div class="arrow">
+						
+					</div>
+					<div class="white box participant_box">
+						<div class="big liner">
+							<h3>Richard Hill</h3>
+							<span class="subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+
+							<hr class="spacer10">
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, magni, magnam, illo modi minima porro sit aperiam deserunt nulla beatae dicta repellat exercitationem nesciunt inventore expedita harum ipsam sapiente quibusdam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, recusandae id accusamus ut molestias adipisci aliquid tenetur cupiditate similique fugit. Inventore, earum quidem veniam quas veritatis esse cumque ullam odio!</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
-		<hr class="spacer60">
+		<hr class="spacer60" id="register_now">
 
 		<div class="row">
 			<div class="col-md-12">
@@ -136,22 +196,15 @@
 			</div>
 		</div>
 
-		<div class="row" style="height: 240px;">
-			<div class="col-md-2 col-md-offset-1">
-				<h4>Hotel Information</h4>
-				<hr class="spacer5">
-				<p class="smaller">
-					Fairmont Chicago,<br>
-					Millenium Park<br>
-					200 North Columbus Drive<br>
-					Chicago, Illinois<br>
-					United States 60601<br>
-					<a href="#" class="">Get Directions</a>
-				</p>
-			</div>
+		<div class="row">
 
-			<div id="summit_map" class="col-md-8">
-				
+			<div class="col-md-10 col-md-offset-1">
+<!-- 				<div class="center">
+					<p style="font-size: 12px;"><b>Fairmont Chicago</b>, Millenium Park, 200 North Columbus Drive, Chicago, Illinois, United States 60601</p>
+				</div> -->
+				<div id="summit_map">
+					
+				</div>
 			</div>
 
 			<!-- <div class="col-md-3">
@@ -166,11 +219,14 @@
 			</div> -->
 		</div>
 
-		<hr class="spacer20">
+		<hr class="spacer60">
 
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-				<p class="bigger">Please complete the registration form below. You will receive a confirmation via email.</p>
+
+				<div class="center">
+					<p class="bigger">Please complete the registration form below. You will receive a confirmation via email.</p>
+				</div>
 				<hr class="spacer40">
 
 				<form action="" class="summit_reg">
@@ -179,11 +235,13 @@
 							<label>Full Name</label>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-6">
 							<input type="text" placeholder="First">
 						</div>
 
-						<div class="col-md-4">
+						<hr class="spacer10 mobonly">
+
+						<div class="col-md-4 col-sm-6">
 							<input type="text" placeholder="Last">
 						</div>
 					</div>
@@ -195,7 +253,7 @@
 							<label>Professional Title</label>
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8 col-sm-12">
 							<input type="text" placeholder="">
 						</div>
 					</div>
@@ -207,7 +265,7 @@
 							<label>Organization</label>
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8 col-sm-12">
 							<input type="text" placeholder="">
 						</div>
 					</div>
@@ -219,7 +277,7 @@
 							<label>Email Address</label>
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8 col-sm-12">
 							<input type="text" placeholder="john@example.com">
 						</div>
 					</div>
@@ -244,16 +302,20 @@
 					<hr class="spacer60">
 					<hr class="spacer30">
 
-					<div class="center">
+					<div class="fluid center">
 						<a href="#" class="long green button">Register</a>
 					</div>
 				</form>
+
 			</div>
 		</div>
 
-		<hr class="spacer60">
-		<hr class="spacer50">
+		<hr class="spacer60 nomob">
+		<hr class="spacer10">
 
+	</div>
+
+	<div class="herounit bubblestwo" style="height: 230px;">
 	</div>
 
 </template>
