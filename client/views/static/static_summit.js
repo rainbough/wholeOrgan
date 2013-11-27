@@ -4,14 +4,24 @@
 Template.static_summit.rendered = function() {
 
 	$(".help-block").popover();
+	$(".button").click(function(e){
+		console.log("ok");
+		var divid = $(this).data("scrollto");		
+		var trg = $("#"+divid);
+	    $('html, body').stop().animate({
+	        'scrollTop': trg.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = divid;
+	    });
+	});
 
 	GoogleMaps.init(
     {
         'sensor': true, //optional
         'key': 'AIzaSyBmAR5EIZmHkwM-pVpzldi1CV6VmAWowF8', //optional
         'language': 'de' //optional
-    }, 
-    
+    },
+
     function(){
         var myLatlng = new google.maps.LatLng(41.886848,-87.62078);
         var mapOptions = {

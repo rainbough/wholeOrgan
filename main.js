@@ -1,22 +1,21 @@
 Router.configure({
 	autoRender: false,
-	layoutTemplate: 'base'
+	layoutTemplate: 'base',
+	unload: function(){
+		Session.set("lastpath",window.location.pathname);
+		console.log(this);
+	}
 });
 
 Router.load(function(){
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
-	$('a[href^="#"]').on('click',function (e) {
+	/*$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 
 	    var target = this.hash,
 	    $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
+	});*/
 });
 
 if (Meteor.isClient) {
@@ -28,6 +27,8 @@ if (Meteor.isClient) {
 		this.route('static',{
 			path:"/:route",
 			before:function(){
+				if(this.params.route[0] == "#") this.stop();
+				console.log(this.params.route);
 				var staticName = "static_"+this.params.route;
 				if(Template[staticName]) {
 					this.template = staticName;
