@@ -5,6 +5,8 @@
     "meteor-mongo-extensions": {
       "git": "https://github.com/jhoxray/meteor-mongo-extensions.git"
     },
+    "external-file-loader": {},
+    "googlemaps": {},
     "meteor-gmaps": {}
   }
 }

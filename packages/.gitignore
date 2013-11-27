@@ -2,3 +2,5 @@
 /bootstrap-3
 /meteor-mongo-extensions
 /meteor-gmaps
+/external-file-loader
+/googlemaps
