@@ -68,6 +68,10 @@ h2
 	&.blue
 		border-bottom 2px solid blue
 
+span.main
+	font-family pontano
+	font-size 24px
+	display block
 
 
 // default paragraph
@@ -102,11 +106,16 @@ background-gen(color)
 	&:hover
 		background-color lighten(color, 7%)
 
-a.button
+
+a.button, button
 	padding 16px 45px
 	background-color #333 // default color
 	font-weight light
 	letter-spacing 1px
+
+	box-shadow none
+	border none
+	outline none
 
 	font-family roboto
 	color #fff
@@ -144,6 +153,13 @@ a.button
 
 	&.gray
 		background-gen(#ccc)
+
+
+// ============================ DEFAULT HEAD + SUBHEAD
+span.subhead
+	font-size 18px
+	color #888
+
 
 
 // ============================ HEADER STYLES
@@ -303,11 +319,44 @@ a.button
 
 
 // ============================ SUMMIT-specific style
-#summit_map
-	height 200px
+
+
+// organization bar (color!)
+.org_bar
+	border-bottom 1px solid #e0e0e0
+	border-top 1px solid #e0e0e0
+
+
+// carousel stuff
+.arrow
+	display block
 	width 100%
+	height 23px
+	background url('/images/white_arrow.png') center bottom no-repeat
+
+.participant_box
+	p
+		@media (max-width: 768px)
+			font-size 14px !important
+
+// summit registration area
+#summit_map
+	height 250px
+	width 100%
+	box-shadow 0px 1px 3px #aaa
 
 form.summit_reg
+	margin-left 0
+
+	@media (min-width: 600px)
+		margin-left 0
+
+	@media (min-width:768px)
+		margin-left 0
+
+	@media (min-width: 992px)
+		margin-left 7%
+
 	label
 		color red
 		font-family pontano
@@ -477,10 +526,15 @@ form.summit_reg
 		text-align center
 
 
-.graybox
-	background-color #f7f7f7
+.box
 	width 100%
 	margin 0
+
+	&.gray
+		background-color #f7f7f7
+
+	&.white
+		background-color #ffffff
 
 	span.head
 		font-family pontano
@@ -555,12 +609,46 @@ hr.spacer60
 
 
 // MISC STYLES
+.nomob
+	display block
+	@media (max-width: 768px)
+		display none !important
+
+.notab
+	display block
+	@media (max-width: 992px)
+		display none !important
+
+.mobonly
+	display none
+	
+	@media (max-width: 768px)
+		display block !important
+
+.tabonly
+	display none
+	
+	@media (max-width: 992px)
+		display block !important
+
+
+
 .center
 	text-align center
 	margin auto
 
+	&.mob
+		text-align left
+
+		@media (max-width: 768px)
+			text-align center
+			margin auto
+
 .liner
 	padding 20px
+
+	&.big
+		padding 30px
 
 	&.noleft
 		padding-left 0
