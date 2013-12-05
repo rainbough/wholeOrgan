@@ -4,15 +4,15 @@
 Template.static_summit.rendered = function() {
 
 	$(".help-block").popover();
-	$(".button").click(function(e){
-		console.log("ok");
+	$("button").click(function(e){
 		var divid = $(this).data("scrollto");		
-		var trg = $("#"+divid);
-	    $('html, body').stop().animate({
-	        'scrollTop': trg.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = divid;
-	    });
+		if(divid) {
+			var trg = $("#"+divid);
+			$('html, body').stop().animate({
+				'scrollTop': trg.offset().top
+			}, 900, 'swing', function () {
+			});
+		}
 	});
 
 	GoogleMaps.init(
@@ -61,3 +61,18 @@ Template.static_summit.rendered = function() {
     }
 );
 }
+
+Template.static_summit.events({
+	"click button#submit_registration": function(e) {
+		e.preventDefault();
+		var reg_data = $("form.summit_reg").serializeFormToObj();
+		console.log(reg_data);
+		Meteor.call("submitSummitRegistration",reg_data,function(err,res){
+			if(err){
+				bootbox.alert("There was an error!<br>"+err.reason);
+			} else {
+				bootbox.alert("Success!<br>You have been registered for the event.")
+			}
+		});
+	}
+});

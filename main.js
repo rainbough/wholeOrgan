@@ -1,3 +1,5 @@
+Attendees = new Meteor.Collection("attendees");
+
 Router.configure({
 	autoRender: false,
 	layoutTemplate: 'base',
