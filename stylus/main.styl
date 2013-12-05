@@ -172,24 +172,23 @@ span.subhead
 		padding-top 30px
 
 	.logo
-		height 105px
+		height 35px
 		background url(/images/wo_logo.png) no-repeat 
 		background-size 83%
+
+		&:hover
+			opacity .9
 
 	// everything over 1200px (large screens)
 	@media (min-width: 1200px)
 		.logo
-			height 105px
-			background url(/images/wo_logo.png) no-repeat 
-			background-size 83%
+			background-size 100%
 
 	
 	// everything over 992px (medium screens)
 	@media screen and (min-width: 992px)
 		.logo
-			height 105px
-			background url(/images/wo_logo.png) no-repeat 
-			background-size 100%
+			background-size 243px
 	
 	
 	// everything over 768px (tablet screens)
@@ -321,10 +320,14 @@ span.subhead
 // ============================ SUMMIT-specific style
 
 
-// organization bar (color!)
+// organization bar (white!)
 .org_bar
 	border-bottom 1px solid #e0e0e0
 	border-top 1px solid #e0e0e0
+
+	&.gray
+		border none
+		background-color #f7f7f7
 
 
 // carousel stuff
@@ -503,6 +506,9 @@ form.summit_reg
 			span.subhead
 				font-size 20px
 
+.whiteback
+	background-color #fff
+	
 
 .grayback
 	background-color #f7f7f7
