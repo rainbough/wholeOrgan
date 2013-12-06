@@ -76,10 +76,10 @@ span.main
 
 // default paragraph
 p
-	font-size 14px
+	font-size 15px
 	font-family roboto
 	font-weight normal
-	line-height 1.6
+	line-height 1.7
 	color #333
 
 	&.bigger
@@ -110,13 +110,13 @@ background-gen(color)
 form
 	margin-left 0
 
-	@media (min-width: 600px)
+	@media handheld, screen and (min-width: 600px)
 		margin-left 0
 
-	@media (min-width:768px)
+	@media handheld, screen and (min-width:768px)
 		margin-left 0
 
-	@media (min-width: 992px)
+	@media handheld, screen and (min-width: 992px)
 		margin-left 7%
 
 	textarea
@@ -213,6 +213,12 @@ a.button, button
 	&.green
 		background-gen(green)
 
+	&.teal
+		background-gen(#2aba97)
+
+	&.red
+		background-gen(#e44845)
+
 	&.gray
 		background-gen(#ccc)
 
@@ -221,6 +227,10 @@ a.button, button
 span.subhead
 	font-size 18px
 	color #888
+
+	&.large
+		font-size 24px
+		font-family pontano
 
 
 
@@ -242,19 +252,19 @@ span.subhead
 			opacity .9
 
 	// everything over 1200px (large screens)
-	@media (min-width: 1200px)
+	@media handheld, screen and (min-width: 1200px)
 		.logo
 			background-size 100%
 
 	
 	// everything over 992px (medium screens)
-	@media screen and (min-width: 992px)
+	@media handheld, screen and (min-width: 992px)
 		.logo
 			background-size 243px
 	
 	
 	// everything over 768px (tablet screens)
-	@media (min-width: 768px)
+	@media handheld, screen and (min-width: 768px)
 		.main
 			padding-top 20px
 
@@ -263,7 +273,7 @@ span.subhead
 
 	
 	// 768px and thinner (mobile devices)
-	@media (max-width: 768px)
+	@media handheld, screen and (max-width: 768px)
 		height auto
 		background none
 		background-color #f2f2f2
@@ -283,7 +293,7 @@ span.subhead
 		float right
 
 		// 768px and thinner (mobile devices)
-		@media (max-width: 768px)
+		@media handheld, screen and (max-width: 768px)
 			float left
 			text-align center
 			display block
@@ -315,7 +325,7 @@ span.subhead
 				color #aaa
 
 			// 992px and thinner
-			@media (max-width: 992px)
+			@media handheld, screen and (max-width: 992px)
 				margin-top 13px
 
 				span.head
@@ -327,7 +337,7 @@ span.subhead
 
 			
 			// 768px and thinner
-			@media (max-width: 768px)
+			@media handheld, screen and (max-width: 768px)
 				margin 7px 25px 0 0
 
 				span.head
@@ -363,7 +373,7 @@ span.subhead
 			&.standout
 				font-weight heavy
 
-		@media (max-width:768px)
+		@media handheld, screen and (max-width:768px)
 			display block
 
 
@@ -392,18 +402,6 @@ span.subhead
 		background-color #f7f7f7
 
 
-// carousel stuff
-.arrow
-	display block
-	width 100%
-	height 23px
-	background url('/images/white_arrow.png') center bottom no-repeat
-
-.participant_box
-	p
-		@media (max-width: 768px)
-			font-size 14px !important
-
 // summit registration area
 #summit_map
 	height 250px
@@ -413,13 +411,13 @@ span.subhead
 form.summit_reg
 	margin-left 0
 
-	@media (min-width: 600px)
+	@media handheld, screen and (min-width: 600px)
 		margin-left 0
 
-	@media (min-width:768px)
+	@media handheld, screen and (min-width:768px)
 		margin-left 0
 
-	@media (min-width: 992px)
+	@media handheld, screen and (min-width: 992px)
 		margin-left 7%
 
 	label
@@ -520,6 +518,7 @@ form.summit_reg
 			border none
 			padding 22px 15px
 			outline none
+			color #bbb
 
 			&:focus
 				outline none !important
@@ -528,7 +527,6 @@ form.summit_reg
 
 
 	.input-group-btn
-
 		border-top-left-radius 0
 		border-bottom-left-radius 0
 		-moz-border-top-left-radius 0
@@ -543,7 +541,34 @@ form.summit_reg
 			border none
 			outline none
 
+			&:hover
+				background-color darken(#2aba97, 5%)
 
+	.boop
+		color #666
+		font-size 12px
+		ul
+			list-style-type none
+			display inline-block
+
+			li
+				display inline-block
+				margin-left 10px
+
+				a
+					color #777
+
+
+
+// ============================ ORGANIZERS
+.organizers
+	
+	@media handheld, screen and (max-width: 600px)
+		h1
+			font-size 28px
+
+		span.subhead
+			font-size 18px
 
 
 // ============================ FULLWIDTH SITE SECTIONS
@@ -557,7 +582,10 @@ form.summit_reg
 		font-family pontano
 		line-height 1.2
 
-		@media (max-width: 620px)
+		&.bigger
+			font-size 56px
+
+		@media handheld, screen and (max-width: 620px)
 			font-size 32px
 
 	span.subhead
@@ -574,17 +602,17 @@ form.summit_reg
 		background-position right bottom
 
 		// everything 600px and thinner
-		@media (max-width: 600px)
+		@media handheld, screen and (max-width: 600px)
 			background-size 350px
 
 		// everything 600px and wider
-		@media (min-width: 600px)
+		@media handheld, screen and (min-width: 600px)
 			background-size 450px
 
-		@media (min-width: 768px)
+		@media handheld, screen and (min-width: 768px)
 			background-size 550px
 
-		@media (min-width: 1000px)
+		@media handheld, screen and (min-width: 1000px)
 			background-size 690px
 
 	&.bubblestwo
@@ -592,7 +620,7 @@ form.summit_reg
 		background-position center bottom
 		background-size 100%
 
-		@media (max-width: 500px)
+		@media handheld, screen and (max-width: 500px)
 			span.mainhead
 				font-size 23px
 				
@@ -622,7 +650,7 @@ form.summit_reg
 			font-size 23px
 			font-weight light
 
-	@media (max-width: 600px)
+	@media handheld, screen and (max-width: 600px)
 		h1
 			font-size 28px
 		p
@@ -634,6 +662,26 @@ form.summit_reg
 	.whiteback
 		p
 			font-size 14px
+
+	&.quote
+		span.main
+			font-size 34px
+			font-style oblique
+
+	&.participants
+		p
+			font-size 12px
+			color #333
+
+		span.main
+			font-size 19px
+
+		a
+			color #333
+			&:hover
+				position relative
+				top 1px
+				color #888
 
 
 .box
@@ -661,6 +709,8 @@ form.summit_reg
 		&.smaller
 			font-size 14px
 
+
+
 // ============================ ALERT BOX STYLES
 .alertbox
 	padding 15px 20px 10px 
@@ -686,17 +736,17 @@ spacer(n)
 	height n
 
 	&.nomob
-		@media (max-width: 768px)
+		@media handheld, screen and (max-width: 768px)
 			display none
 
 	&.notab
-		@media (max-width: 992px)
+		@media handheld, screen and (max-width: 992px)
 			display none
 
 	&.mobonly
 		display none
 		
-		@media (max-width: 768px)
+		@media handheld, screen and (max-width: 768px)
 			display block
 
 hr.spacer5
@@ -722,26 +772,27 @@ hr.spacer60
 
 
 // MISC STYLES
+
 .nomob
 	display block
-	@media (max-width: 768px)
+	@media handheld, screen and (max-width: 768px)
 		display none !important
 
 .notab
 	display block
-	@media (max-width: 992px)
+	@media handheld, screen and (max-width: 992px)
 		display none !important
 
 .mobonly
 	display none
 	
-	@media (max-width: 768px)
+	@media handheld, screen and (max-width: 768px)
 		display block !important
 
 .tabonly
 	display none
 	
-	@media (max-width: 992px)
+	@media handheld, screen and (max-width: 992px)
 		display block !important
 
 
@@ -753,7 +804,7 @@ hr.spacer60
 	&.mob
 		text-align left
 
-		@media (max-width: 768px)
+		@media handheld, screen and (max-width: 768px)
 			text-align center
 			margin auto
 
