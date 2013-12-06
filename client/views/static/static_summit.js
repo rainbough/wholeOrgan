@@ -71,6 +71,12 @@ Template.static_summit.events({
 			if(err){
 				bootbox.alert("There was an error!<br>"+err.reason);
 			} else {
+				if(reg_data.subscribe == "on") {
+					Meteor.call("subscribeMailchimp",reg_data.email,function(err,res){
+						if(err)console.log(err);
+						else console.log(res);
+					});
+				}
 				bootbox.alert("Success!<br>You have been registered for the event.")
 			}
 		});
