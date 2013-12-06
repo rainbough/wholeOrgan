@@ -106,7 +106,69 @@ background-gen(color)
 	&:hover
 		background-color lighten(color, 7%)
 
+// ============================ STANDARD FORM
+form
+	margin-left 0
 
+	@media (min-width: 600px)
+		margin-left 0
+
+	@media (min-width:768px)
+		margin-left 0
+
+	@media (min-width: 992px)
+		margin-left 7%
+
+	textarea
+		width 100%
+		max-width 100%
+		height 200px
+		max-height 200px
+		background-color #fafafa
+		border none
+		border-radius(3px)
+		outline none
+		padding 20px
+		box-shadow inset 0px 2px 1px #eaeaea
+
+	label
+		color red
+		font-family pontano
+		font-size 15px
+		padding 15px 0
+
+		&.skinny
+			padding-bottom 0
+
+	// default input
+	input
+		background-color #fafafa
+		border none
+		border-radius(3px)
+		font-family pontano
+		font-size 16px
+		box-shadow inset 0px 2px 1px #eaeaea
+		width 100%
+		margin 0
+
+	input[type=checkbox]
+		border none
+		box-shadow none
+		display inline-block
+
+	input[type=text]
+		padding 15px 20px
+
+	.help-block
+		margin-top -18px
+		color #bbb
+		font-style oblique
+
+		&:hover
+			cursor pointer
+			color #888
+
+// ============================ LINKS		
 a.button, button
 	padding 16px 45px
 	background-color #333 // default color
@@ -172,24 +234,23 @@ span.subhead
 		padding-top 30px
 
 	.logo
-		height 105px
+		height 35px
 		background url(/images/wo_logo.png) no-repeat 
 		background-size 83%
+
+		&:hover
+			opacity .9
 
 	// everything over 1200px (large screens)
 	@media (min-width: 1200px)
 		.logo
-			height 105px
-			background url(/images/wo_logo.png) no-repeat 
-			background-size 83%
+			background-size 100%
 
 	
 	// everything over 992px (medium screens)
 	@media screen and (min-width: 992px)
 		.logo
-			height 105px
-			background url(/images/wo_logo.png) no-repeat 
-			background-size 100%
+			background-size 243px
 	
 	
 	// everything over 768px (tablet screens)
@@ -321,10 +382,14 @@ span.subhead
 // ============================ SUMMIT-specific style
 
 
-// organization bar (color!)
+// organization bar (white!)
 .org_bar
 	border-bottom 1px solid #e0e0e0
 	border-top 1px solid #e0e0e0
+
+	&.gray
+		border none
+		background-color #f7f7f7
 
 
 // carousel stuff
@@ -372,6 +437,11 @@ form.summit_reg
 		font-size 16px
 		box-shadow inset 0px 2px 1px #eaeaea
 		width 100%
+
+	input[type=checkbox]
+		border none
+		box-shadow none
+		display inline-block
 
 	input[type=text]
 		padding 15px 20px
@@ -444,6 +514,35 @@ form.summit_reg
 		&:hover
 			opacity .7
 
+	.input-group
+		input[type=text]
+			background-color #333333
+			border none
+			padding 22px 15px
+			outline none
+
+			&:focus
+				outline none !important
+				border none
+				box-shadow inset 0px 0px 1px #2aba97
+
+
+	.input-group-btn
+
+		border-top-left-radius 0
+		border-bottom-left-radius 0
+		-moz-border-top-left-radius 0
+		-moz-border-bottom-left-radius 0
+		-webkit-border-top-left-radius 0
+		-webkit-border-bottom-left-radius 0
+
+		button.btn
+			background-color #2aba97
+			color #fff
+			padding 12px 15px
+			border none
+			outline none
+
 
 
 
@@ -503,6 +602,9 @@ form.summit_reg
 			span.subhead
 				font-size 20px
 
+.whiteback
+	background-color #fff
+
 
 .grayback
 	background-color #f7f7f7
@@ -516,6 +618,10 @@ form.summit_reg
 		font-family roboto
 		font-weight normal
 
+		&.bigger
+			font-size 23px
+			font-weight light
+
 	@media (max-width: 600px)
 		h1
 			font-size 28px
@@ -524,6 +630,10 @@ form.summit_reg
 
 	.center
 		text-align center
+
+	.whiteback
+		p
+			font-size 14px
 
 
 .box
@@ -558,6 +668,9 @@ form.summit_reg
 
 	&.orange
 		border 1px solid orange
+
+.breadcrumb
+	background-color #eee
 
 
 
