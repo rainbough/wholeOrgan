@@ -222,6 +222,10 @@ a.button, button
 	&.gray
 		background-gen(#ccc)
 
+	&.white
+		background-gen(#fff)
+		color #333
+
 
 // ============================ DEFAULT HEAD + SUBHEAD
 span.subhead
@@ -387,6 +391,18 @@ span.subhead
 		font-size 16px
 		display block
 		color #888
+
+	&.extend
+		a
+			color #333
+			
+			&:hover
+				color #888
+				cursor pointer
+
+				p
+					color #888
+
 
 
 // ============================ SUMMIT-specific style
@@ -683,6 +699,7 @@ form.summit_reg
 				position relative
 				top 1px
 				color #888
+				cursor pointer
 
 				p
 					color #888
