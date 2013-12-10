@@ -69,7 +69,7 @@ Template.static_summit.events({
 		console.log(reg_data);
 		Meteor.call("submitSummitRegistration",reg_data,function(err,res){
 			if(err){
-				bootbox.alert("There was an error!<br>"+err.reason);
+				alerterror("There was an error!<br>"+err.reason);
 			} else {
 				if(reg_data.subscribe == "on") {
 					Meteor.call("subscribeMailchimp",reg_data.email,function(err,res){
@@ -77,7 +77,7 @@ Template.static_summit.events({
 						else console.log(res);
 					});
 				}
-				bootbox.alert("Success!<br>You have been registered for the event.")
+				alertsuccess("Success!<br>You have been registered for the event.")
 			}
 		});
 	}
