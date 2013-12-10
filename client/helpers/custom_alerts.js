@@ -8,7 +8,7 @@ window.customalert = function(msg,title,cls) { bootbox.dialog({
    * @optional String|Element
    * adds a header to the dialog and places this text in an h4
    */
-  title: (title||"Default error"),
+  //title: (title||"Default error"),
   
   /**
    * @optional Function
