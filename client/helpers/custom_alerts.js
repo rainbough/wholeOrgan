@@ -2,7 +2,7 @@ window.customalert = function(msg,title,cls) { bootbox.dialog({
   /**
    * @required String|Element
    */
-  message: (msg||"Default message"),
+  message: "<div class=\"modal-alert-icon\"></div>"+(msg||"Default message"),
   
   /**
    * @optional String|Element
