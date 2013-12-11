@@ -2,10 +2,6 @@ Meteor.methods({
 	"subscribeMailchimp": function(email) {
 		var apiKey = "41a3bf92e48ae6e79f6e2614eed02e3c-us1";
 		var listId = "833576f23f";
-		if(Meteor.settings.mailchimpApiKey)
-			apiKey = Meteor.settings.mailchimpApiKey;
-		if(Meteor.settings.mailchimpListId)
-			listId = Meteor.settings.mailchimpListId;
 		var apiEndPoint = apiKey.slice(-3); // Pull appropriate api endpoint datacenter from apiKey http://apidocs.mailchimp.com/api/rtfm/#api-endpoints
 		var url = "http://"+ apiEndPoint +".api.mailchimp.com/1.3/?method=listSubscribe&apikey="+ apiKey +"&id="+ listId +"&email_address="+ encodeURIComponent(email) +"&output=json";
 		//synchronous POST
@@ -21,15 +17,16 @@ Meteor.methods({
 			//} else {
 			//  some stuff;
 			//}
-			console.log("was a mailchimp error not meteor");
 			console.log("Response issue: ", result.statusCode);
 			var errorJson = JSON.parse(result.content);
 			throw new Meteor.Error(result.statusCode, errorJson.error);
 		}
 	},
 	"submitSummitRegistration":function(data){
-		_.each(data,function(o){
-			if(o.length < 1) throw new Meteor.Error(403,"One or more fields was not filled out.");
+		_.each(data,function(o,k){
+			if (k != "subscribe") {
+				if(o.length < 1) throw new Meteor.Error(403,"One or more fields was not filled out.");
+			}
 		});
 		if(data.inv_code.toUpperCase() != "57WRQL") throw new Meteor.Error(403,"Invalid invitation code.");
 		var attendee_exists = Attendees.find({"email":data.email}).fetch();
