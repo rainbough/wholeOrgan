@@ -810,6 +810,18 @@ hr.spacer60
 
 
 // MISC STYLES
+.modal-alert
+	text-align center
+	font-size 18px
+	line-height 1.6
+
+	.modal-alert-icon
+		height 150px
+		width 150px
+		background url('/images/alert.png') center center no-repeat
+		margin auto
+		margin-bottom 10px
+
 .modal-alert-error
 	text-align center
 	font-size 18px
@@ -837,6 +849,10 @@ hr.spacer60
 
 .nomob
 	display block
+
+	&.center
+		margin auto
+
 	@media handheld, screen and (max-width: 768px)
 		display none !important
 
