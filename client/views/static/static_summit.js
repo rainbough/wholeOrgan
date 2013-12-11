@@ -19,7 +19,7 @@ Template.static_summit.rendered = function() {
     {
         'sensor': true, //optional
         'key': 'AIzaSyBmAR5EIZmHkwM-pVpzldi1CV6VmAWowF8', //optional
-        'language': 'de' //optional
+        'language': 'en' //optional
     },
 
     function(){
