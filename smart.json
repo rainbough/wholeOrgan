@@ -7,7 +7,6 @@
     },
     "external-file-loader": {},
     "googlemaps": {},
-    "meteor-gmaps": {},
 	"bootbox": {
 		"git": "https://github.com/JacksonBrsrd/meteor-bootboxjs"
 	}
