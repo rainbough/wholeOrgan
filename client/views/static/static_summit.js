@@ -71,6 +71,11 @@ Template.static_summit.events({
 			if(err){
 				alerterror("There was an error!<br>"+err.reason);
 			} else {
+				var register_email_body = Template.registration_email({firstname:reg_data.first_name});
+				Meteor.call("sendVerificationEmail",reg_data.email,register_email_body,function(err,res){
+					if(err)console.log(err);
+					else console.log(res);
+				});
 				if(reg_data.subscribe == "on") {
 					Meteor.call("subscribeMailchimp",reg_data.email,function(err,res){
 						if(err)console.log(err);

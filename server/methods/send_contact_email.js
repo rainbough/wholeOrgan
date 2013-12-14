@@ -8,3 +8,14 @@ Meteor.methods({
 		});
 	}
 });
+
+Meteor.methods({
+	"sendVerificationEmail":function(registrant_email,email_body){
+		Email.send({
+			from:"noreply@wholeorgan.org",
+			to: registrant_email,
+			subject:"WholeOrgan: Please read confirmation email for details about the event",
+			html:email_body
+		});
+	}
+});
