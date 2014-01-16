@@ -21,6 +21,7 @@ Router.load(function(){
 });
 
 if (Meteor.isClient) {
+	if(!window.console) window.console={log:function(hi){return hi;}};
 	Router.map(function(){
 		this.route('home',{
 			path:'/',
