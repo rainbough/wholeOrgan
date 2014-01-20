@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 preserve-inputs
 
@@ -18,3 +17,7 @@ googlemaps
 bootbox
 http
 email
+handlebar-helpers
+roles
+accounts-base
+accounts-password

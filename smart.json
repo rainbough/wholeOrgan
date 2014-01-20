@@ -7,8 +7,10 @@
     },
     "external-file-loader": {},
     "googlemaps": {},
-	"bootbox": {
-		"git": "https://github.com/JacksonBrsrd/meteor-bootboxjs"
-	}
+    "bootbox": {
+      "git": "https://github.com/JacksonBrsrd/meteor-bootboxjs"
+    },
+    "handlebar-helpers": {},
+    "roles": {}
   }
 }

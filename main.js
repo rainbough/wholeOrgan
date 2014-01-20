@@ -27,6 +27,26 @@ if (Meteor.isClient) {
 			path:'/',
 			template:'home'
 		});
+		this.route('admin_login',{
+			path:'/admin_login'
+		});
+		this.route('attendee_list',{
+			path:"/attendee_list",
+			before:function(){
+				this.subscribe('currentUser').wait();
+				if(!this.ready()) return;
+				if(!Roles.userIsInRole(Meteor.user(),['admin'])){
+					this.redirect(Router.routes.admin_login.path());
+					this.stop(); 
+				} else {
+					this.subscribe('attendees').wait();
+					if(!this.ready()) return;
+				}
+			},
+			data:function(){
+				return {attendees:Attendees.find().fetch()};
+			}
+		});
 		this.route('static',{
 			path:"/:route",
 			before:function(){
@@ -42,7 +62,32 @@ if (Meteor.isClient) {
 			}
 		});
 	});
+	Template.admin_login.events({
+		'submit .admin_login_form' : function(e, t){
+			e.preventDefault();
+			var email = t.find('[name="username"]').value
+				, password = t.find('[name="password"]').value;
+			console.log(email+" | "+password);
+			Meteor.loginWithPassword(email, password, function(err){
+				if (err) {
+					console.log(err);
+					alert("Error logging in!\nYou may have misspelled your email or password.\nPlease try again.");
+				} else {
+					Router.go("/");
+				}
+			});
+			return false; 
+		}
+	});
 }
 
 if (Meteor.isServer) {
+	Meteor.startup(function(){
+		var base_admin_id;
+		var base_admin = Meteor.users.find({"emails.address":"admin@700forscience.com"}).fetch();
+		if(!base_admin.length > 0) base_admin_id = Accounts.createUser({email:"admin@700forscience.com",password:"700admin",profile:{first_name:"SfS",last_name:"Admin"}})
+		else base_admin_id = base_admin['_id'];
+		if (base_admin_id) Roles.addUsersToRoles([base_admin_id], ['admin']);
+		if(!Roles.userIsInRole([base_admin_id],['approved'])) Roles.addUsersToRoles([base_admin_id], ['approved']);
+	});
 }
