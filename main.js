@@ -31,7 +31,7 @@ if (Meteor.isClient) {
 			path:'/admin_login'
 		});
 		this.route('attendee_list',{
-			path:"/attendee_list",
+			path:"/admin/attendee_list",
 			before:function(){
 				this.subscribe('currentUser').wait();
 				if(!this.ready()) return;
@@ -73,7 +73,7 @@ if (Meteor.isClient) {
 					console.log(err);
 					alert("Error logging in!\nYou may have misspelled your email or password.\nPlease try again.");
 				} else {
-					Router.go("/");
+					Router.go("/admin/attendee_list");
 				}
 			});
 			return false; 
