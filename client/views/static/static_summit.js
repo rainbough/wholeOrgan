@@ -2,6 +2,7 @@
 // follow this example (replacing static_summit with the corresponding template name) for other pages
 // if you for whatever reason want to make a file ouytside of the static folder, please tell me first
 Template.static_summit.rendered = function() {
+	$('body').removeClass('homePage');
 
 	$(".help-block").popover();
 	$("button").click(function(e){

@@ -8,3 +8,8 @@ Template.static_contact.events({
 		});
 	}
 });
+
+
+Template.static_contact.rendered = function() {
+	$('body').addClass('homePage');
+}

@@ -1,16 +1,16 @@
 
-@import url('http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700,300|Pontano+Sans');
+@import url('http://fonts.googleapis.com/css?family=Muli|Open+Sans:400italic,300,400,600');
 
 
 
 // declare some fonts
-pontano = 'Pontano Sans', sans-serif;
-roboto = 'Roboto', sans-serif;
+open = 'Open Sans', sans-serif;
+muli = 'Muli', sans-serif;
 
 // declare some colors 
-blue = #41a1e2
+blue = #1c8098
 red = #d54747
-orange = #f05c39
+orange = #f26533
 green = #8cca38
 
 // declare some font weights
@@ -31,6 +31,9 @@ XS devices — less than 768px
 	margin 0px
 	padding 0px
 
+.homePage
+	background url(/images/bigliverbg.png) right -70% no-repeat
+
 html, body
 	height 100%
 
@@ -46,7 +49,7 @@ html, body
 
 // default headers
 h1, h2, h3, h4, h5, h6
-	font-family roboto
+	font-family open
 	color #333
 	margin 0
 	padding 0
@@ -56,55 +59,152 @@ h1, h2, h3, h4, h5, h6
 h1
 	font-size 36px
 	font-weight light
-	line-height 1.3
+	line-height 1.2
+	color #666
+
+	&.blue
+		color blue
+
+	span.heavy
+		font-weight normal
+		display inline-block
 
 
 h2
-	font-size 24px
-	padding-bottom 14px
-	border-bottom 2px solid orange
+	font-size 26px
+	font-family open
+	font-weight light
+	line-height 1.3
 	display inline-block
 
+	// everything over 768px (tablet screens)
+	@media handheld, screen and (min-width: 768px)
+		font-size 26px
+
+	// everything over 992px (medium screens)
+	@media handheld, screen and (min-width: 992px)
+		font-size 30px
+
+	// everything over 1200px (large screens)
+	@media handheld, screen and (min-width: 1200px)
+		font-size 36px
+
 	&.blue
-		border-bottom 2px solid blue
+		padding-bottom 2px
+		border-bottom 1px solid blue
 
-span.main
-	font-family pontano
+	&.orange
+		padding-bottom 2px
+		border-bottom 1px solid orange
+
+	span.heavy
+		font-weight normal
+		display inline
+
+h3
+	font-size 28px
+	font-weight light
+	line-height 1.5
+
+h4
+	font-family muli
+	font-size 22px
+	line-height 1.5
+	color #6d6d6d
+
+	&.orange
+		color orange
+
+h5
+	font-family muli
 	font-size 24px
-	display block
+	line-height 1.5
+	color orange
+
+h6
+	font-family muli
+	font-size 18px
+	text-transform uppercase
+	color #888
+
+	.orange
+		color orange
+
+	.bigger
+		font-size 22px
 
 
-// default paragrap	h
+
+// default paragraph
 p
-	font-size 15px
-	font-family roboto
+	font-size 16px
+	font-family muli
 	font-weight normal
 	line-height 1.7
 	color #333
+	margin-top 20px
 
 	&.bigger
 		color #666
-		font-size 17px
-		font-family roboto
+		font-size 19px
+		font-family muli
+		font-weight normal
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			font-size 18px
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			font-size 19px
+
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			font-size 19px
+
+	&.clean
+		margin 0
+
+	&.orange
+		color orange
+
+	&.dark
+		color #222
+
+	em
+		font-family open
+		font-style oblique
 		font-weight normal
 
 
 // default links
 a
 	color orange
+	padding-bottom 2px
+	border-bottom 1px solid #ddd
 
 	&:hover
 		text-decoration none
+		color darken(orange, 20%)
+		border-bottom 1px solid #ccc
+
+	&.blue
+		color lighten(#11535f, 20%)
+
+		&:hover
+			color lighten(#11535f, 30%)
 
 border-radius(arg)
 	-webkit-border-radius arg
 	-moz-border-radius arg
 	border-radius arg
+	behavior url(/pie/PIE.htc)
 
 background-gen(color)
 	background-color color
 	&:hover
 		background-color lighten(color, 7%)
+
 
 // ============================ STANDARD FORM
 form
@@ -124,16 +224,16 @@ form
 		max-width 100%
 		height 200px
 		max-height 200px
-		background-color #fafafa
-		border none
+		background-color #f3f8f9
+		border 1px solid darken(#b6ced2, 15%)
 		border-radius(3px)
 		outline none
 		padding 20px
-		box-shadow inset 0px 2px 1px #eaeaea
+		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
 
 	label
-		color red
-		font-family pontano
+		color darken(#f3f8f9, 55%)
+		font-family muli
 		font-size 15px
 		padding 15px 0
 
@@ -142,12 +242,12 @@ form
 
 	// default input
 	input
-		background-color #fafafa
-		border none
+		background-color #f3f8f9
+		border 1px solid darken(#b6ced2, 15%)
 		border-radius(3px)
-		font-family pontano
+		font-family muli
 		font-size 16px
-		box-shadow inset 0px 2px 1px #eaeaea
+		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
 		width 100%
 		margin 0
 
@@ -171,20 +271,21 @@ form
 
 // ============================ LINKS		
 a.button, button
-	padding 16px 45px
+	padding 18px 45px 17px
 	background-color #333 // default color
 	font-weight light
 	letter-spacing 1px
+	text-transform uppercase
 
 	box-shadow none
 	border none
 	outline none
 
-	font-family roboto
+	font-family muli
 	color #fff
-	font-size 18px
+	font-size 14px
 
-	border-radius(3px)
+	border-radius(2px)
 
 	&:hover
 		background-color lighten(#333, 20%)
@@ -246,51 +347,28 @@ span.subhead
 	height 84px
 
 	.main
-		padding-top 30px
+		padding-top 18px
 
-	.logo
-		height 35px
-		background url(/images/wo_logo.png) no-repeat 
-		background-size 83%
-
-		&:hover
-			opacity .9
-
+	// everything over 768px (tablet screens)
+	@media handheld, screen and (min-width: 768px)
+		.logo
+			img
+				width 100%
+	// everything over 992px (tablet screens)
+	@media handheld, screen and (min-width: 992px)
+		.logo
+			img
+				width 100%
 	// everything over 1200px (large screens)
 	@media handheld, screen and (min-width: 1200px)
 		.logo
-			background-size 100%
+			img
+				width 100%
+				margin-top 7px
 
-	
-	// everything over 992px (medium screens)
-	@media handheld, screen and (min-width: 992px)
-		.logo
-			background-size 243px
-	
-	
-	// everything over 768px (tablet screens)
-	@media handheld, screen and (min-width: 768px)
-		.main
-			padding-top 20px
 
-		.logo
-			margin-top 10px
 
-	
-	// 768px and thinner (mobile devices)
-	@media handheld, screen and (max-width: 768px)
-		height auto
-		background none
-		background-color #f2f2f2
 
-		.main
-			padding-top 0
-			margin auto
-		.logo
-			height 90px
-			background url(/images/wo_logo.png) no-repeat 
-			background-size 250px
-			background-position center center
 
 	
 	// ============================ MAIN style nav, responsive
@@ -310,6 +388,7 @@ span.subhead
 			padding 0
 			margin 0
 			background none
+			border none
 
 
 		// list items are blocks with headers and subheads
@@ -321,13 +400,14 @@ span.subhead
 
 			span.head
 				font-size 15px
-				font-family roboto
+				font-family open
 				color #555
 				display block
 
 			span.subhead
 				font-size 12px
 				color #aaa
+				font-family muli
 
 			// 992px and thinner
 			@media handheld, screen and (max-width: 992px)
@@ -385,13 +465,19 @@ span.subhead
 // ============================ HOME-specific style
 .snapshot
 	span.main
-		font-size 20px
-		display block
+		font-size 24px
+		font-family open
+		margin 0
+		font-weight light
+		color blue
 
 	span.sub
+		font-family muli
 		font-size 16px
 		display block
-		color #888
+		color #444
+		margin-top 10px
+		line-height 1.6
 
 	&.extend
 		a
@@ -407,16 +493,23 @@ span.subhead
 
 
 // ============================ SUMMIT-specific style
-
+.summitbox
+	border 1px solid #ddd
+	border-radius(3px)
 
 // organization bar (white!)
 .org_bar
-	border-bottom 1px solid #e0e0e0
-	border-top 1px solid #e0e0e0
+	background-color #f6f8f9
+	padding 10px 0
 
 	&.gray
 		border none
-		background-color #f7f7f7
+		background-color #f6f8f9
+
+	span.main
+		font-size 26px
+		font-family open
+		font-weight light
 
 
 // summit registration area
@@ -474,7 +567,7 @@ form.summit_reg
 
 // ============================ FOOTER STYLES
 .footer
-	background #3e3e3e
+	background #353e40
 	min-height 250px
 	position relative
 	margin-top -250px
@@ -482,6 +575,7 @@ form.summit_reg
 
 	a
 		color #fff
+		border none
 
 	p
 		color #818181
@@ -497,12 +591,12 @@ form.summit_reg
 
 	.secondary_nav
 		margin-top 0
-		padding 15px 0
-		background #333
+		padding 20px 0
+		background #2f3739
 
 		ul.snav
 			float left
-			font-family roboto
+			font-family muli
 			font-size 14px
 			color #969696
 			list-style-type none
@@ -532,7 +626,7 @@ form.summit_reg
 
 	.input-group
 		input[type=text]
-			background-color #333333
+			background-color #2f3739
 			border none
 			padding 22px 15px
 			outline none
@@ -553,7 +647,7 @@ form.summit_reg
 		-webkit-border-bottom-left-radius 0
 
 		button.btn
-			background-color #2aba97
+			background-color blue
 			color #fff
 			padding 12px 15px
 			border none
@@ -578,111 +672,102 @@ form.summit_reg
 
 
 
-// ============================ ORGANIZERS
+// ============================ ORGANIZER - SPECIFIC PAGE
+h1.organizer
+	font-size 42px
+	color blue
+	line-height 1.3
+
 .organizers
-	
-	@media handheld, screen and (max-width: 600px)
-		h1
-			font-size 28px
+	h1.orgtitle
+		font-size 32px
+		color #333
+		margin-bottom 10px
 
-		span.subhead
-			font-size 18px
+	p
+		margin-top 5px
 
-.container
-	
-	&.quote
-		background url('/images/quote3.png') 100px 0px no-repeat
-
-		@media handheld, screen and (max-width: 768px)
-			background none
-
-		@media handheld, screen and (max-width: 992px)
-			background none
+	span.subhead
+		font-family muli
+		font-size 22px
+		font-weight light
+		line-height 1.3
 
 // ============================ FULLWIDTH SITE SECTIONS
 .herounit
-	margin 0
-	padding 0
+	background-color #10839f
+	color #f2f7f9
 
 	span.mainhead
-		font-size 48px
-		font-weight light
-		font-family pontano
-		line-height 1.2
+		font-size 21px
+		font-weight normal
+		font-family open
+		line-height 1.5
+
+		// everything 768px and wider
+		@media handheld, screen and (min-width: 768px)
+			font-size 32px
+
+		// everything 992px and wider
+		@media handheld, screen and (min-width: 992px)
+			font-size 38px
+
+		// everything 1200px and wider
+		@media handheld, screen and (min-width: 1200px)
+			font-size 40px
+
+			small
+				font-size 40px
+
+
+		span.light
+			font-weight light
 
 		&.bigger
 			font-size 56px
 
-		@media handheld, screen and (max-width: 620px)
-			font-size 32px
+	&.two
+		background transparent
+		color blue
 
-	span.subhead
-		display block
-		color #bbb
-		font-weight light
-		font-family pontano
+		span.mainhead
+			font-size 21px
+			font-weight normal
+			font-family open
+			line-height 1.5
 
-		font-size 26px
-		margin-top 10px
+			// everything 768px and wider
+			@media handheld, screen and (min-width: 768px)
+				font-size 32px
 
-	&.bubblesone
-		background url('/images/bubbles1.png') no-repeat
-		background-position right bottom
+			// everything 992px and wider
+			@media handheld, screen and (min-width: 992px)
+				font-size 38px
 
-		// everything 600px and thinner
-		@media handheld, screen and (max-width: 600px)
-			background-size 350px
+			// everything 1200px and wider
+			@media handheld, screen and (min-width: 1200px)
+				font-size 40px
 
-		// everything 600px and wider
-		@media handheld, screen and (min-width: 600px)
-			background-size 450px
-
-		@media handheld, screen and (min-width: 768px)
-			background-size 550px
-
-		@media handheld, screen and (min-width: 1000px)
-			background-size 690px
-
-	&.bubblestwo
-		background url('/images/bubbles2.png') no-repeat
-		background-position center bottom
-		background-size 100%
-
-		@media handheld, screen and (max-width: 500px)
-			span.mainhead
-				font-size 23px
-				
 				small
-					font-size 23px
+					font-size 40px
 
-			span.subhead
-				font-size 20px
+
+			span.light
+				font-weight light
+
+			&.bigger
+				font-size 56px
+
 
 .whiteback
 	background-color #fff
 
 
 .grayback
-	background-color #f7f7f7
+	background-color #f6f8f9
 	width 100%
 	padding 80px 0
 	margin 0
-
-	p
-		color #666
-		font-size 17px
-		font-family roboto
-		font-weight normal
-
-		&.bigger
-			font-size 23px
-			font-weight light
-
-	@media handheld, screen and (max-width: 600px)
-		h1
-			font-size 28px
-		p
-			font-size 15px
 
 	.center
 		text-align center
@@ -691,45 +776,64 @@ form.summit_reg
 		p
 			font-size 14px
 
-	&.quote
-		padding-top 60px
-		padding-bottom 50px
+.quote
+	border 1px solid #ddd
+	padding 40px 0
+	border-radius(3px)
 
-		span.main
-			font-size 34px
-			font-style oblique
+	span.main
+		font-size 38px
+		font-weight light
+		color blue
+		font-style oblique
+		font-family open
 
-	&.participants
+.facilitators
+	span.main
+		font-size 24px
+		font-family open
+		margin 0
+		font-weight light
+	
 
-		p
-			font-size 12px
-			color #333
+.participants
+	p
+		font-size 12px
+		color #333
+		margin-top 5px
 
-			@media handheld, screen and (max-width: 992px)
-				font-size 15px
-				padding-bottom 30px
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			font-size 13px
 
-			@media handheld, screen and (max-width: 600px)
-				font-size 15px
-				padding-bottom 30px
+		// everything over 992px (medium screens)
+		@media handheld, screen and (min-width: 992px)
+			font-size 13px
 
-		span.main
-			font-size 19px
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			font-size 13px
 
-		img
-			max-width 200px
+	span.main
+		font-size 20px
+		font-family open
+		margin 0
+		font-weight light
 
-		a
-			color #333
-			
-			&:hover
-				position relative
-				top 1px
+	img
+		max-width 200px
+
+	a
+		color #333
+		
+		&:hover
+			position relative
+			top 1px
+			color #888
+			cursor pointer
+
+			p
 				color #888
-				cursor pointer
-
-				p
-					color #888
 
 
 .box
@@ -888,7 +992,8 @@ hr.spacer60
 	@media handheld, screen and (max-width: 992px)
 		display block !important
 
-
+.alignright
+	text-align right
 
 .center
 	text-align center
