@@ -826,17 +826,41 @@ h1.organizer
 
 	&.three
 		background url(/images/darkkidneybg3.png) 98% 60% no-repeat
-		background-size auto 100%
+		background-size auto 160%
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			background url(/images/darkkidneybg3.png) 100% 50% no-repeat
+			background-size auto 160%
 
 		// everything over 992px (tablet screens)
 		@media handheld, screen and (min-width: 992px)
-			background url(/images/darkkidneybg3.png) 105% 50% no-repeat
-			background-size auto 100%
+			background url(/images/darkkidneybg3.png) 100% 50% no-repeat
+			background-size auto 160%
 
 		// everything over 1200px (large screens)
 		@media handheld, screen and (min-width: 1200px)
-			background url(/images/darkkidneybg3.png) 100% 70% no-repeat
-			background-size auto 190%
+			background url(/images/darkkidneybg3.png) 100% 50% no-repeat
+			background-size auto 160%
+
+	&.four
+		background url(/images/darklungbg2.png) 101% 65% no-repeat
+		background-size auto 170%
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			background url(/images/darklungbg2.png) 100% 50% no-repeat
+			background-size auto 160%
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			background url(/images/darklungbg2.png) 101% 65% no-repeat
+			background-size auto 170%
+
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			background url(/images/darklungbg2.png) 101% 60% no-repeat
+			background-size auto 170%
 
 
 
