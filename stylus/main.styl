@@ -38,6 +38,62 @@ XS devices — less than 768px
 html, body
 	height 100%
 
+body.ie8
+	.header
+		padding 0
+
+		.navbar-header
+			padding 0
+
+			.logo
+				width 300px
+				padding-top 1px
+
+				// everything over 768px (tablet screens)
+				@media handheld, screen and (min-width: 768px)
+					width 370px
+					padding-top 0
+
+				// everything over 992px (mediumscreens)
+				@media handheld, screen and (min-width: 992px)
+					width 370px
+					padding-top 0
+
+				// everything over 1200px (large screens)
+				@media handheld, screen and (min-width: 1200px)
+					padding-top 0
+
+				img
+					width 70% !important
+					max-width 300px
+
+					// everything over 768px (tablet screens)
+					@media handheld, screen and (min-width: 768px)
+						width 100%	
+
+					// everything over 992px (tablet screens)
+					@media handheld, screen and (min-width: 992px)
+						width 100%
+
+					// everything over 1200px (large screens)
+					@media handheld, screen and (min-width: 1200px)
+						width 100%
+						margin-top 0
+
+
+
+		ul.nav
+
+			// everything over 768px (tablet screens)
+			@media handheld, screen and (min-width: 768px)
+				padding-top 10px
+
+			// everything over 992px (medium screens)
+			@media handheld, screen and (min-width: 992px)
+				padding-top 10px
+
+
+
 #wrap
 	min-height 100%
 	height auto !important
