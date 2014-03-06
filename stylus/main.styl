@@ -1,11 +1,12 @@
 
-@import url('http://fonts.googleapis.com/css?family=Muli|Open+Sans:400italic,300,400,600');
+@import url('http://fonts.googleapis.com/css?family=Droid+Serif|Muli|Open+Sans:400italic,300,400,600');
 
 
 
 // declare some fonts
 open = 'Open Sans', sans-serif;
 muli = 'Muli', sans-serif;
+droid = 'Droid Serif', serif;
 
 // declare some colors 
 blue = #1c8098
@@ -26,18 +27,16 @@ XS devices — less than 768px
 */
 
 
-/* ======================== true style begins y0 ======================== */
+/* 001 DOCUMENT SETUP
+================================================ */
 *, body, html
 	margin 0px
 	padding 0px
 
-// .homePage
-// 	background url(/images/bigliverbg2.png) 105% -60% no-repeat
-// 	background-size 45%
-
 html, body
 	height 100%
 
+// fix body for ie8 browsers. jerks.
 body.ie8
 	.header
 		padding 0
@@ -80,10 +79,7 @@ body.ie8
 						width 100%
 						margin-top 0
 
-
-
 		ul.nav
-
 			// everything over 768px (tablet screens)
 			@media handheld, screen and (min-width: 768px)
 				padding-top 10px
@@ -92,8 +88,7 @@ body.ie8
 			@media handheld, screen and (min-width: 992px)
 				padding-top 10px
 
-
-
+// wrapper for footer
 #wrap
 	min-height 100%
 	height auto !important
@@ -104,14 +99,16 @@ body.ie8
 	padding: 0 0 250px
 
 
-// default headers
+
+/* 002 TYPOGRAPHY
+================================================ */
+// header styles
 h1, h2, h3, h4, h5, h6
 	font-family open
 	color #333
 	margin 0
 	padding 0
 	font-weight 400
-
 
 h1
 	font-size 28px
@@ -126,10 +123,8 @@ h1
 	a
 		color inherit
 		border none
-
 		&:hover
 			border none
-
 
 	&.blue
 		color blue
@@ -143,7 +138,6 @@ h1
 	span.heavy
 		font-weight normal
 		display inline-block
-
 
 h2
 	font-size 26px
@@ -209,8 +203,7 @@ h6
 		font-size 22px
 
 
-
-// default paragraph
+// paragraph styles
 p
 	font-size 16px
 	font-family muli
@@ -246,13 +239,16 @@ p
 	&.dark
 		color #222
 
+	&.serif
+		font-family droid
+
 	em
-		font-family open
+		// font-family open
 		font-style oblique
 		font-weight normal
 
 
-// default links
+// link styles
 a
 	color orange
 	padding-bottom 2px
@@ -281,134 +277,7 @@ background-gen(color)
 		background-color lighten(color, 7%)
 
 
-// ============================ STANDARD FORM
-form
-	margin-left 0
-
-	@media handheld, screen and (min-width: 600px)
-		margin-left 0
-
-	@media handheld, screen and (min-width:768px)
-		margin-left 0
-
-	@media handheld, screen and (min-width: 992px)
-		margin-left 7%
-
-	textarea
-		width 100%
-		max-width 100%
-		height 200px
-		max-height 200px
-		background-color #f3f8f9
-		border 1px solid darken(#b6ced2, 15%)
-		border-radius(3px)
-		outline none
-		padding 20px
-		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
-
-	label
-		color darken(#f3f8f9, 55%)
-		font-family muli
-		font-size 15px
-		padding 15px 0
-
-		&.skinny
-			padding-bottom 0
-
-	// default input
-	input
-		background-color #f3f8f9
-		border 1px solid darken(#b6ced2, 15%)
-		border-radius(3px)
-		font-family muli
-		font-size 16px
-		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
-		width 100%
-		margin 0
-
-	input[type=checkbox]
-		border none
-		box-shadow none
-		display inline-block
-		width auto !important
-
-	input[type=text]
-		padding 15px 20px
-
-	.help-block
-		margin-top -18px
-		color #bbb
-		font-style oblique
-
-		&:hover
-			cursor pointer
-			color #888
-
-// ============================ LINKS		
-a.button, button
-	padding 18px 45px 17px
-	background-color #333 // default color
-	font-weight light
-	letter-spacing 1px
-	text-transform uppercase
-
-	box-shadow none
-	border none
-	outline none
-
-	font-family muli
-	color #fff
-	font-size 14px
-
-	border-radius(2px)
-
-	&:hover
-		background-color lighten(#333, 20%)
-
-	&:active
-		position relative
-		top 1px
-
-	&.small
-		padding 10px 40px
-
-	&.long
-		padding 14px 65px
-
-	&.fluid
-		display inline-block
-		padding 10px
-		width 100%
-		max-width 300px
-
-	&.blue
-		background-gen(blue)
-
-		&:hover
-			background-color lighten(blue, 5%)
-			color white
-
-	&.orange
-		background-gen(orange)
-
-	&.green
-		background-gen(green)
-
-	&.teal
-		background-gen(#2aba97)
-
-	&.red
-		background-gen(#e44845)
-
-	&.gray
-		background-gen(#ccc)
-
-	&.white
-		background-gen(#fff)
-		color #333
-
-
-// ============================ DEFAULT HEAD + SUBHEAD
+// header, subheader styles
 span.subhead
 	font-size 18px
 	color #888
@@ -417,9 +286,6 @@ span.subhead
 		font-size 24px
 		font-family pontano
 
-
-
-// ============================ HEADER STYLES
 .header
 	margin 0px
 	background #f2f2f2
@@ -485,75 +351,217 @@ span.subhead
 				padding-top 10px
 
 
+/* 003 NAVIGATION
+================================================ */
+
+// navigation styles
+ul.nav
+	float right
+
+	// 768px and thinner (mobile devices)
+	@media handheld, screen and (max-width: 768px)
+		float left
+		text-align center
+		display block
+		margin-bottom 30px
+		
+
+	// strip bootstrap styles
+	a
+		padding 0
+		margin 0
+		background none
+		border none
 
 
+	// list items are blocks with headers and subheads
+	li
+		margin-top 5px
 
-	
-	// ============================ MAIN style nav, responsive
-	ul.nav
-		float right
-
-		// 768px and thinner (mobile devices)
-		@media handheld, screen and (max-width: 768px)
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
 			float left
-			text-align center
+			display inline-block
+			margin-right 50px
+
+			&:last-child
+				margin-right 0
+
+		span.head
+			font-size 15px
+			font-family open
+			color #555
 			display block
-			margin-bottom 30px
-			
 
-		// strip bootstrap styles
-		a
-			padding 0
-			margin 0
-			background none
-			border none
+		span.subhead
+			font-size 12px
+			color #aaa
+			font-family muli
 
-
-		// list items are blocks with headers and subheads
-		li
-			margin-top 5px
-
-			// everything over 768px (tablet screens)
-			@media handheld, screen and (min-width: 768px)
-				float left
-				display inline-block
-				margin-right 50px
-
-				&:last-child
-					margin-right 0
+		// 992px and thinner
+		@media handheld, screen and (max-width: 992px)
+			margin-top 13px
 
 			span.head
-				font-size 15px
-				font-family open
-				color #555
-				display block
+				&:hover
+					color blue
+		
+		// 768px and thinner
+		@media handheld, screen and (max-width: 768px)
+			// margin 7px 25px 0 0
+			text-align left
+
+		&:hover
+			h1
+				color #333
 
 			span.subhead
-				font-size 12px
-				color #aaa
-				font-family muli
+				color blue
 
-			// 992px and thinner
-			@media handheld, screen and (max-width: 992px)
-				margin-top 13px
 
-				span.head
-					&:hover
-						color blue
-			
-			// 768px and thinner
-			@media handheld, screen and (max-width: 768px)
-				// margin 7px 25px 0 0
-				text-align left
+/* 004 FORMS & BUTTONS
+================================================ */
+// form styles
+form
+	margin-left 0
 
-			&:hover
-				h1
-					color #333
+	@media handheld, screen and (min-width: 600px)
+		margin-left 0
 
-				span.subhead
-					color blue
+	@media handheld, screen and (min-width:768px)
+		margin-left 0
 
-// ============================ HOME-specific style
+	@media handheld, screen and (min-width: 992px)
+		margin-left 0
+
+	textarea
+		width 100%
+		max-width 100%
+		height 200px
+		max-height 200px
+		background-color #f3f8f9
+		border 1px solid darken(#b6ced2, 15%)
+		border-radius(3px)
+		outline none
+		padding 20px
+		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
+
+	label
+		color darken(#f3f8f9, 55%)
+		font-family muli
+		font-size 15px
+		padding 15px 0
+
+		&.skinny
+			padding-bottom 0
+
+	// default input
+	input
+		background-color #f3f8f9
+		border 1px solid darken(#b6ced2, 15%)
+		border-radius(3px)
+		font-family muli
+		font-size 16px
+		box-shadow inset 0px 2px 1px darken(#f3f8f9, 6%)
+		width 100%
+		margin 0
+
+	input[type=checkbox]
+		border none
+		box-shadow none
+		display inline-block
+		width auto !important
+
+	input[type=text], input[type=password]
+		padding 15px 20px
+
+	.help-block
+		margin-top -18px
+		color #bbb
+		font-style oblique
+
+		&:hover
+			cursor pointer
+			color #888
+
+// button styles	
+a.button, button
+	padding 18px 45px 17px
+	background-color #333 // default color
+	font-weight light
+	letter-spacing 1px
+	text-transform uppercase
+
+	box-shadow none
+	border none
+	outline none
+
+	font-family muli
+	color #fff
+	font-size 14px
+
+	border-radius(2px)
+
+	&:hover
+		background-color lighten(#333, 20%)
+
+	&:active
+		position relative
+		top 1px
+
+	&.small
+		padding 10px 40px
+
+	&.long
+		padding 14px 65px
+
+	&.fluid
+		display inline-block
+		padding 10px
+		width 100%
+		max-width 300px
+
+	&.fillwidth
+		width 100%
+
+	&.blue
+		background-gen(blue)
+
+		&:hover
+			background-color lighten(blue, 5%)
+			color white
+
+	&.orange
+		background-gen(orange)
+
+	&.green
+		background-gen(green)
+
+	&.teal
+		background-gen(#2aba97)
+
+	&.red
+		background-gen(#e44845)
+
+	&.gray
+		background-gen(#ccc)
+
+	&.white
+		background-gen(#fff)
+		color #167dad
+		// border: 1px solid #ddd;
+
+		&:hover 
+			background-gen(#fcfcfc)
+			color darken(#167dad, 10%)
+
+
+/* 005 PAGE-SPECIFIC STYLES
+If these become too cumbersome, standardize for easier use
+and move into another category.
+================================================ */
+
+// home styles
 .snapshot
 	span.main
 		font-size 19px
@@ -621,7 +629,7 @@ img.home_part
 
 
 
-// ============================ SUMMIT-specific style
+// summit styles
 .summitbox
 	border 1px solid #ddd
 	border-radius(3px)
@@ -653,6 +661,83 @@ ul.mob_supporters
 	background-color #f6f8f9
 	padding 10px 0
 
+	.coordinator
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			padding 20px 20px 20px 0
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			padding 20px 20px 20px 0
+		
+
+	img 
+		max-width 300px
+
+	img.sfs
+		width 180px 
+		float left
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			width 110px
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			width 140px
+
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			width 180px
+
+	img.sos
+		width 100%
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			margin-top 20px
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			margin-top 25px
+
+
+	img.mcgowan
+		width: 230px
+		margin-left 30px
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			width 130px
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			width 180px
+
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			width 230px
+
+
+	img.organo
+		width 230px
+		margin-top 10px
+
+		// everything over 768px (tablet screens)
+		@media handheld, screen and (min-width: 768px)
+			width 180px
+			margin-top 0
+			margin-left 50px
+
+		// everything over 992px (tablet screens)
+		@media handheld, screen and (min-width: 992px)
+			width 200px
+			margin-top 10px
+
+		// everything over 1200px (large screens)
+		@media handheld, screen and (min-width: 1200px)
+			width 230px
+
 	a
 		border none
 
@@ -667,7 +752,9 @@ ul.mob_supporters
 		color #aaa
 
 
-// summit registration area
+
+
+// registration styles
 #summit_map
 	height 250px
 	width 100%
@@ -683,20 +770,20 @@ form.summit_reg
 		margin-left 0
 
 	@media handheld, screen and (min-width: 992px)
-		margin-left 7%
+		margin-left 0
 
 	label
 		color red
-		font-family pontano
+		font-family muli
 		font-size 15px
 		padding 15px 0
 
 	// default input
 	input
-		background-color #fafafa
+		background-color #fff
 		border none
 		border-radius(3px)
-		font-family pontano
+		font-family muli
 		font-size 16px
 		box-shadow inset 0px 2px 1px #eaeaea
 		width 100%
@@ -720,7 +807,7 @@ form.summit_reg
 			color #888
 
 
-// ============================ FOOTER STYLES
+// footer styles
 .footer
 	background #f6f8f9
 	min-height 250px
@@ -826,7 +913,7 @@ form.summit_reg
 
 
 
-// ============================ ORGANIZER - SPECIFIC PAGE
+// organizer styles
 h1.organizer
 	font-size 26px
 	color blue
@@ -851,7 +938,7 @@ h1.organizer
 		font-weight light
 		line-height 1.3
 
-// ============================ FULLWIDTH SITE SECTIONS
+// fullwidth styles
 .watermark
 	background url(/images/darkliverbg4.png) 98% 60% no-repeat
 	background-size auto 230%
@@ -928,7 +1015,7 @@ h1.organizer
 		font-size 21px
 		font-weight normal
 		font-family open
-		line-height 1.5
+		
 
 		// everything 768px and wider
 		@media handheld, screen and (min-width: 768px)
@@ -943,11 +1030,18 @@ h1.organizer
 			font-size 40px
 
 			small
-				font-size 40px
+				font-size 34px
+				font-weight light
 
 
 		span.light
 			font-weight light
+			line-height 1 
+
+			small
+				font-size 28px !important
+				margin 0 !important
+				padding 0 !important
 
 		&.bigger
 			font-size 56px
@@ -997,6 +1091,9 @@ h1.organizer
 	width 100%
 	padding 80px 0
 	margin 0
+
+	&.nopadding
+		padding 0
 
 	.center
 		text-align center
@@ -1107,7 +1204,7 @@ h1.organizer
 
 
 
-// ============================ ALERT BOX STYLES
+// alert styles
 .alertbox
 	padding 15px 20px 10px 
 	border 1px solid #ffffff
@@ -1119,8 +1216,10 @@ h1.organizer
 	background-color #eee
 
 
+/* 006 MISCELLANEOUS & HELPER STYLES
+================================================ */
 
-// ============================ SPACER STYLES
+// spacer styles
 hr
 	clear both
 	border-style none
@@ -1167,7 +1266,6 @@ hr.spacer60
 	spacer(60px)
 
 
-// MISC STYLES
 .fullwidthline
 	background-color #eee
 	height 1px

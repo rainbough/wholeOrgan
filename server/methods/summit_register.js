@@ -1,7 +1,7 @@
 Meteor.methods({
 	"subscribeMailchimp": function(email) {
-		var apiKey = "41a3bf92e48ae6e79f6e2614eed02e3c-us1";
-		var listId = "833576f23f";
+		var apiKey = "e9fd5b0cb4d88eb584905f36b65e13b7-us3";
+		var listId = "73e079ba6d";
 		var apiEndPoint = apiKey.slice(-3); // Pull appropriate api endpoint datacenter from apiKey http://apidocs.mailchimp.com/api/rtfm/#api-endpoints
 		var url = "http://"+ apiEndPoint +".api.mailchimp.com/1.3/?method=listSubscribe&apikey="+ apiKey +"&id="+ listId +"&email_address="+ encodeURIComponent(email) +"&output=json";
 		//synchronous POST
