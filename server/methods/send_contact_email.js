@@ -14,7 +14,7 @@ Meteor.methods({
 		Email.send({
 			from:"noreply@wholeorgan.org",
 			to: registrant_email,
-			subject:"WholeOrgan: Please read confirmation email for details about the event",
+			subject:"WholeOrgan: Thank you for your RSVP!",
 			html:email_body
 		});
 	}
