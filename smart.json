@@ -10,7 +10,6 @@
     "bootbox": {
       "git": "https://github.com/JacksonBrsrd/meteor-bootboxjs"
     },
-    "handlebar-helpers": {},
     "roles": {},
     "respond": {},
     "modernizr-meteor": {}
