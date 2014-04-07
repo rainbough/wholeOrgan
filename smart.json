@@ -12,6 +12,7 @@
     },
     "roles": {},
     "respond": {},
-    "modernizr-meteor": {}
+    "modernizr-meteor": {},
+    "handlebar-helpers": {}
   }
 }
