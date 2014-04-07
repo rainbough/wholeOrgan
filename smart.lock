@@ -1,0 +1,70 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "iron-router": {},
+      "bootstrap-3": {},
+      "meteor-mongo-extensions": {
+        "git": "https://github.com/jhoxray/meteor-mongo-extensions.git",
+        "branch": "master"
+      },
+      "external-file-loader": {},
+      "googlemaps": {},
+      "bootbox": {
+        "git": "https://github.com/JacksonBrsrd/meteor-bootboxjs",
+        "branch": "master"
+      },
+      "handlebar-helpers": {},
+      "roles": {},
+      "respond": {},
+      "modernizr-meteor": {}
+    },
+    "packages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.6.4",
+        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+      },
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "meteor-mongo-extensions": {
+        "git": "https://github.com/jhoxray/meteor-mongo-extensions.git",
+        "branch": "master",
+        "commit": "b76daeeabed98f85b82e0bffe18b71ece3956093"
+      },
+      "external-file-loader": {
+        "git": "https://github.com/davidd8/meteor-external-file-loader.git",
+        "tag": "v0.1.4",
+        "commit": "352694a7cf906b8241161c2fd1435161c1d5409f"
+      },
+      "googlemaps": {
+        "git": "https://github.com/drewjw81/meteor-googlemaps.git",
+        "tag": "v0.0.2",
+        "commit": "da8785c82cfd7de0111f898ef10728e7ed24e361"
+      },
+      "bootbox": {
+        "git": "https://github.com/JacksonBrsrd/meteor-bootboxjs",
+        "branch": "master",
+        "commit": "5fdd9b4a80d0daa91633559caab93d30995b9ed3"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.2.6",
+        "commit": "f2a9058281f8f2fe028767841d7445aadd6893cf"
+      },
+      "respond": {
+        "git": "https://github.com/BenjaminRH/meteor-respond.git",
+        "tag": "v0.1.0",
+        "commit": "a8a867580f9a08759fdf02a2d0254ff6bb223391"
+      },
+      "modernizr-meteor": {
+        "git": "https://github.com/ckir/modernizr-meteor.git",
+        "tag": "v2.6.2",
+        "commit": "391ca2a3beff3cd2b0e1099cb2d744b5a2e8a73e"
+      }
+    }
+  }
+}
