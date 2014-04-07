@@ -14,11 +14,6 @@
         "git": "https://github.com/JacksonBrsrd/meteor-bootboxjs",
         "branch": "master"
       },
-      "handlebar-helpers": {},
-      "roles": {},
-      "respond": {},
-      "modernizr-meteor": {}
-    },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
